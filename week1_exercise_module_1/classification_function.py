@@ -1,10 +1,10 @@
 def classification_function(tp, fp, fn):
 
-    if type(tp) != int:
+    if not isinstance(tp, int):
         return 'TP must be int'
-    elif type(fp) != int:
+    elif not isinstance(fp, int):
         return 'FP must be int'
-    elif type(fn) != int:
+    elif not isinstance(fn, int):
         return 'FN must be int'
     elif tp <= 0 or fp <= 0 or fn <= 0:
         return 'TP, FP, FN must be greater than or equal to 0'
@@ -15,7 +15,7 @@ def classification_function(tp, fp, fn):
         return precision, recall, f1
 if __name__ == '__main__':
     result = classification_function(5, 3 , 4)
-    if type(result) == str:
+    if isinstance(result, str):
         print(result)
     else:
         print(f"Precision: {result[0]}")
